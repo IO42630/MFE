@@ -1,0 +1,59 @@
+== Notes
+
+=== Web Components
+Set of feature that provide a standard component model for the Web.
+
+* encapsulation
+* interoperability
+
+
+
+* Custom Elements
+* Shadow DOM
+* HTML Templates
+
+{empty} +
+
+=== Glossary
+|===
+| linting | static checking source code via some program.
+|===
+
+
+
+=== Architectural Goals
+|===
+| Isolation
+| Separate Deployment
+| Single Page Shell
+| Different SPA-Frameworks
+| Tree Shaking
+| Vendor Bundles
+| Several MFEs at the same time
+| Prevents Version Conflicts
+| Spearate Development
+| One optimized solution (bundle)
+|===
+
+{empty} +
+
+=== Micro vs Macro Architecture
+* Macro : between apps.
+* Micro : within apps.
+
+{empty} +
+
+=== Pseudo Call-Stack
+
+
+
+[options=header,cols="2,2,4"]
+|===
+| A | calls B | Comment
+|main.ts | app/app.module |
+|app.module | app.component | maybe
+| app.component | shell/shell.service.init(config) | config is defined inline here, clients a-d.
+| init(config) | preloadClients() | if config.preload
+| preloadClients | load |
+
+|===
